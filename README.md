@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Proyecto de Gestión de Incidencias
 
-## Getting Started
+Este proyecto es una aplicación web construida con Next.js que permite visualizar, crear y actualizar incidencias. Utiliza la API de Trello para gestionar el estado de las incidencias y está estilizada con Tailwind CSS. La librería de componentes usada es Shadcn, y para las pruebas se emplea Jest junto con React Testing Library.
 
-First, run the development server:
+## Características
 
-```bash
+- **Visualización de Incidencias:** Muestra una tabla con incidencias, indicando su estado como "Hecho" o "Pendiente".
+- **Creación de Incidencias:** Permite añadir nuevas incidencias.
+- **Actualización de Incidencias:** Permite actualizar el estado de las incidencias.
+
+## Tecnologías Utilizadas
+
+- **Next.js:** Framework de React para aplicaciones web.
+- **Shadcn:** Librería de componentes para la UI.
+- **Tailwind CSS:** Framework de utilidades para el diseño.
+- **Jest y React Testing Library:** Para pruebas unitarias y de integración.
+- **Axios:** Para las solicitudes HTTP.
+- **ESLint:** Para el análisis y la calidad del código.
+- **API de Trello:** Para gestionar el estado y los datos de las incidencias.
+
+## Instalación
+
+1. Clona el repositorio:
+
+git clone https://github.com/pvelezp/incidencias-app.git
+Navega al directorio del proyecto:
+
+Instala las dependencias:
+npm install
+
+Inicia el servidor de desarrollo:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+La aplicación estará disponible en http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Pruebas
+Para ejecutar las pruebas, usa el siguiente comando:
+npm test
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Esto ejecutará Jest junto con React Testing Library para verificar que todo funcione como se espera.
 
-## Learn More
+Uso de la API de Trello
+El proyecto utiliza la API de Trello para gestionar las incidencias. Asegúrate de tener una clave API de Trello y configurar las variables de entorno adecuadas en un archivo .env.local para conectar tu aplicación con Trello.
 
-To learn more about Next.js, take a look at the following resources:
+Contribuciones
+Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request si encuentras algún problema o deseas agregar nuevas características.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Licencia
+Este proyecto está licenciado bajo la Licencia MIT.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Este archivo `README.md` proporciona una visión general completa del proyecto, cubriendo las características, tecnologías, instalación, pruebas, y más. Asegúrate de reemplazar los valores de ejemplo (como el enlace del repositorio) con la información específica de tu proyecto.
