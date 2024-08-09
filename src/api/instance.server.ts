@@ -8,7 +8,6 @@ const axiosServerInstance = axios.create({
 axiosServerInstance.interceptors.request.use(
   (config) => {
     if (config.method === "get") {
-      // Append API_KEY and TOKEN as query parameters for GET requests
       config.params = {
         ...config.params,
         apikey: process.env.API_KEY,
