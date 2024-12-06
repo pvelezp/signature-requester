@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Home from "./page";
+import { DocumentProvider } from "./context/documents-provider";
 
 jest.mock("next/navigation", () => ({
   useRouter: jest.fn(),
@@ -7,14 +8,12 @@ jest.mock("next/navigation", () => ({
 
 describe("home test", () => {
   it("renders correctly", () => {
-    render(<Home />);
-    expect(screen.getByText(/bienvenido a galactic corp/i)).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        /explorando nuevas fronteras del espacio, elevando la humanidad hacia un futuro ilimitado 🚀/i
-      )
-    ).toBeInTheDocument();
-
-    expect(screen.getAllByText(/acceder/i).length).toBe(2);
+    render(
+      <DocumentProvider>
+        <Home />
+      </DocumentProvider>
+    );
+    expect(screen.getByText(/upload document/i)).toBeInTheDocument();
+    expect(screen.getByText(/request signature/i)).toBeInTheDocument();
   });
 });

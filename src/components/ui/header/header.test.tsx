@@ -1,16 +1,35 @@
 import { render, screen } from "@testing-library/react";
 import Header from "./header";
 
-jest.mock("next/navigation", () => ({
-  useRouter: jest.fn(),
-}));
+describe("Header", () => {
+  it("renders 'Sign Requester' link", () => {
+    render(<Header />);
 
-describe("header test", () => {
-  it("renders correctly", () => {
-    render(<Header title="Tabla de incidencias" action={<p>Test</p>} />);
-    expect(screen.getByAltText(/logo-desktop/i)).toBeInTheDocument();
-    expect(screen.getByAltText(/logo-mobile/i)).toBeInTheDocument();
-    expect(screen.getByText(/tabla de incidencias/i)).toBeInTheDocument();
-    expect(screen.getByText(/test/i)).toBeInTheDocument();
+    const linkElement = screen.getByText(/Sign Requester/i);
+    expect(linkElement).toBeInTheDocument();
+    expect(linkElement).toHaveAttribute("href", "/");
+  });
+
+  it("renders 'My Documents' link", () => {
+    render(<Header />);
+
+    const linkElement = screen.getByText(/my documents/i);
+    expect(linkElement).toBeInTheDocument();
+    expect(linkElement).toHaveAttribute("href", "/documents");
+  });
+
+  it("has the correct class names", () => {
+    render(<Header />);
+
+    const headerElement = screen.getByRole("banner");
+    expect(headerElement).toHaveClass(
+      "flex justify-between items-center p-6 w-full shadow-sm"
+    );
+
+    const signRequesterLink = screen.getByText(/sign requester/i);
+    expect(signRequesterLink).toHaveClass("font-bold text-lg");
+
+    const myDocumentsLink = screen.getByText(/my documents/i);
+    expect(myDocumentsLink).toHaveClass("font-semibold text-gray-600");
   });
 });
